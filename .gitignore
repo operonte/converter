@@ -1,0 +1,27 @@
+# Build y publicar
+publish/
+publish_uninstaller/
+dist/
+Converter-Setup.exe
+*.exe
+
+# Visual Studio / .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDE
+.idea/
+*.swp
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>..\icon.ico</ApplicationIcon>
+    <AssemblyName>ConverterInstaller</AssemblyName>
+    <RootNamespace>ConverterInstaller</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Embeber Converter.exe y UninstallConverter.exe (Build-Instalador.bat los genera) -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\publish\Converter.exe" Link="Converter.exe" Condition="Exists('..\publish\Converter.exe')" />
+    <EmbeddedResource Include="..\publish_uninstaller\UninstallConverter.exe" Link="UninstallConverter.exe" Condition="Exists('..\publish_uninstaller\UninstallConverter.exe')" />
+    <EmbeddedResource Include="Recursos\TerminosDeServicio.html" Link="TerminosDeServicio.html" />
+    <EmbeddedResource Include="Recursos\PoliticaPrivacidad.html" Link="PoliticaPrivacidad.html" />
+    <EmbeddedResource Include="Recursos\AcercaDe.html" Link="AcercaDe.html" />
+    <EmbeddedResource Include="Recursos\Contacto.html" Link="Contacto.html" />
+    <EmbeddedResource Include="Recursos\LICENSE.txt" Link="LICENSE.txt" />
+  </ItemGroup>
+
+</Project>

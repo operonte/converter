@@ -1,0 +1,27 @@
+============================================
+  CONVERTER - Un solo archivo instalador
+============================================
+
+PARA QUIEN GENERA EL INSTALADOR (desarrollador, en Windows con .NET 8):
+
+   Ejecutar: Build-Instalador.bat
+
+   Se crea: Converter-Setup.exe
+
+   Ese es el ÚNICO archivo que repartes. Como los programas que la gente
+   descarga siempre: un .exe, nada de zips ni pasos raros.
+
+
+PARA QUIEN INSTALA (usuario final, sin conocimientos de informática):
+
+   Solo necesita Converter-Setup.exe.
+
+   1. Doble clic en Converter-Setup.exe
+   2. Pulsar "Sí" si Windows pregunta
+   3. Pulsar "Instalar"
+   4. Esperar y pulsar "Cerrar" cuando termine
+
+   No tiene que instalar .NET, FFmpeg ni nada más. Todo va en ese archivo.
+
+   (Opcional: puedes enviarle también LEEME-PARA-QUIEN-INSTALA.txt con
+   estas mismas instrucciones en lenguaje sencillo.)

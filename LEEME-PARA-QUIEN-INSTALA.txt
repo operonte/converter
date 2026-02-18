@@ -1,0 +1,21 @@
+CONVERTER - Cómo instalar
+=========================
+
+Solo necesitas UN archivo: Converter-Setup.exe
+
+1. Haz doble clic en Converter-Setup.exe
+2. Si Windows pregunta si quieres permitir cambios, pulsa Sí
+3. Pulsa el botón "Instalar"
+4. Espera a que termine (la primera vez puede tardar un poco porque descarga lo necesario)
+5. Cuando diga "Listo", pulsa Cerrar
+
+Ya está. No tienes que instalar .NET ni FFmpeg ni nada más.
+
+Cómo usar el programa después de instalar:
+- Haz clic derecho en un video o en una canción (por ejemplo un .mp4 o .mp3)
+- Verás la opción "Convertir a..."
+- Elige el formato que quieras (MP3, MP4, etc.) y se convertirá el archivo
+
+Para desinstalar:
+- Menú Inicio → busca "Converter" → Desinstalar Converter
+- O Configuración de Windows → Aplicaciones → Converter → Desinstalar
