@@ -1,0 +1,43 @@
+name: Build installer and upload to Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to upload to (e.g. v1.0.0). Leave empty for the latest release.'
+        required: false
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Publish Converter
+        run: dotnet publish Converter.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o publish
+
+      - name: Publish Uninstaller
+        run: dotnet publish ConverterUninstaller/ConverterUninstaller.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o publish_uninstaller
+
+      - name: Publish Installer
+        run: dotnet publish ConverterInstaller/ConverterInstaller.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o dist
+
+      - name: Copy to Converter-Setup.exe
+        run: Copy-Item -Path dist\ConverterInstaller.exe -Destination Converter-Setup.exe
+
+      - name: Upload asset to Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ("${{ github.event_name }}" -eq "release") { $tag = "${{ github.event.release.tag_name }}" }
+          elseif ("${{ github.event.inputs.tag }}" -ne "") { $tag = "${{ github.event.inputs.tag }}" }
+          else { $tag = (gh release list --limit 1 --json tagName -q '.[0].tagName') }
+          gh release upload $tag Converter-Setup.exe --clobber
