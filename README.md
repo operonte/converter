@@ -1,5 +1,7 @@
 # Converter
 
+**Creador:** [Cristian Bravo](https://github.com/operonte) (operonte) · **Contacto:** [cristian.bravo.droguett@gmail.com](mailto:cristian.bravo.droguett@gmail.com)
+
 Herramienta para Windows que añade al **menú contextual** (clic derecho) la opción **"Convertir a..."** en archivos de audio y video. Un solo instalador (.exe) instala en Program Files, aparece en Agregar o quitar programas, menú Inicio, y incluye términos de servicio, política de privacidad, acerca de y contacto.
 
 ## Descarga del instalador
