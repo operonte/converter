@@ -2,6 +2,13 @@
 
 Herramienta para Windows que añade al **menú contextual** (clic derecho) la opción **"Convertir a..."** en archivos de audio y video. Un solo instalador (.exe) instala en Program Files, aparece en Agregar o quitar programas, menú Inicio, y incluye términos de servicio, política de privacidad, acerca de y contacto.
 
+## Descarga del instalador
+
+- **[Descargar Converter-Setup.exe](https://github.com/operonte/converter/releases/latest/download/Converter-Setup.exe)** (enlace directo al instalador)
+- [Ver todas las versiones / Releases](https://github.com/operonte/converter/releases)
+
+Un solo archivo para Windows: haz doble clic y pulsa *Instalar*. No necesitas instalar .NET ni FFmpeg; el instalador lo hace todo.
+
 ## Para el usuario final
 
 1. Ejecutar **Converter-Setup.exe** (el instalador pedirá permisos de administrador).
